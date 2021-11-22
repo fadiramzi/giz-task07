@@ -10,7 +10,7 @@
 Task Requirements, Hints and details:
 - Create JSX "Product" component (Reusable Product Card)
 Receives Props that contains details of the product like "Name", "Price", "Description", for item picture use a static image for all, pass props for each one.
-- Create JSX "input" Component
+- Create JSX "÷nput" Component
 Receives Props that contains details for input like "Placeholder", onClick function to call from parent, "value"
 - Create JSX "Button" Component
 Receives Props that contains "title of button", onClick function to call from parent 
