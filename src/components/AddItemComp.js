@@ -7,8 +7,7 @@ const AddItemComp = ({onAdd}) => {
     const [productName, setProductName] = useState()
     const [productPrice, setProductPrice] = useState()
     const [productDiscription, setProductDiscription] = useState()
-
-
+    const [productImg, setProductImg] = useState(null)
     
     const onSubmit = (e) => {
         e.preventDefault()
@@ -25,11 +24,11 @@ const AddItemComp = ({onAdd}) => {
             return
         }
 
-        onAdd({productName,productPrice,productDiscription})
-
+        onAdd({productName,productPrice,productDiscription,productImg})
         setProductName('')
         setProductPrice('')
         setProductDiscription('')
+        setProductImg(null)
 
     }
     return (
@@ -62,7 +61,8 @@ const AddItemComp = ({onAdd}) => {
 
             <Input type='file' 
             inputName='Product image: ' 
-            styles='addItemInput' />
+            styles='addItemInput'
+            onChange={(e) => setProductImg(URL.createObjectURL(e.target.files[0]))} />
 
             <Button name='Add New' styles='btnAdd' type='submit' />
 

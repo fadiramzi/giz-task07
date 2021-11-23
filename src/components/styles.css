@@ -80,12 +80,50 @@
 	height: 20px;
 }
 .product {
-	background: #f4f4f4;
-	margin: 5px;
-	padding: 10px 20px;
+	display: flex;
+	flex-direction: column;
+	width: 210px;
+	height: 332px;
+	padding: 2px;
+	background-color: white;
+	border-radius: 15px 15px 0 0;
+	box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+	border: double;
 }
 .deletex {
 	cursor: pointer;
+	width: 10px;
+}
+.prodName {
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+.nameDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 200px;
+}
+.productsDiv {
+	display: flex;
+	min-width: 1274px;
+	justify-content: space-between;
+	padding: 50px;
+}
+.deleteDiv {
+	display: flex;
+	justify-content: flex-end;
+}
+.btnAddCart {
+	height: 40px;
+	background-color: #000;
+	color: white;
+	border: none;
+	bottom: -40px;
+	width: 100%;
+	left: 0;
 }
