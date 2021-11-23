@@ -119,9 +119,10 @@
 }
 .productsDiv {
 	display: flex;
-	min-width: 1274px;
+	min-width: 1024px;
 	justify-content: space-between;
 	padding: 50px;
+	flex-wrap: wrap;
 }
 .deleteDiv {
 	display: flex;
