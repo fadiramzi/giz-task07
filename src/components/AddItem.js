@@ -10,7 +10,7 @@ function AddItem({onAdd}) {
 
   return (
     <div>
-      <Button name='Add Item' onClick={togglePopup} /> 
+      <Button name='Add Item' onClick={togglePopup} styles={'btnHeader'} /> 
       {isOpen && <Popup
       handleClose={togglePopup}
       onAdd={onAdd} />}
