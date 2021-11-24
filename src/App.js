@@ -1,19 +1,12 @@
 import Header from './components/Header';
 import './components/styles.css'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Products from './components/Products';
 import Content from './components/Content';
 
 function App() {
   const [products] = useState(Content)
   const [itemFound,setItemFound] = useState(products)
-  
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, [input])
 
     const deleteProduct = (id) => {
       setItemFound(itemFound.filter((product) => product.id !== id ))
@@ -27,7 +20,6 @@ function App() {
 
   const searchHandler = (e) => {
     setItemFound(products)
-    console.log(products)
      let filteredProduct= itemFound.filter((item) => {
          return  item.productName.toLowerCase().includes(e.target.value.toLowerCase())
        })
