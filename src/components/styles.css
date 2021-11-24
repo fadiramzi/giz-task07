@@ -136,6 +136,7 @@
 	bottom: -40px;
 	width: 100%;
 	left: 0;
+	cursor: pointer;
 }
 .btnHeader {
 	width: 260px;
