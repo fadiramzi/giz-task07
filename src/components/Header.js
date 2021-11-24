@@ -7,7 +7,7 @@ const Header = ({onAdd, onChange}) => {
         <header className='headerCls'>
             <div className='headerDiv'>
               <div>
-                <Input disc='Search for products here...' type='text' styles='searchTxt' onChange={onChange} />
+                <Input disc='Search for products here...' type='text' styles='searchTxt' onChange={onChange} id='searchId'/>
               </div>
               <div>
                 <AddItem onAdd={onAdd} />

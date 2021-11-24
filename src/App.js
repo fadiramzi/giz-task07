@@ -15,12 +15,14 @@ function App() {
 
     const deleteProduct = (id) => {
       setProducts(products.filter((product) => product.id !== id ))
+      document.getElementById('searchId').value=''
     }
     
     const addProduct = (product) => {
       const id = Math.floor(Math.random()*10000)+1
       const newProduct = {id, ...product}
       setProducts([...products,newProduct])
+      document.getElementById('searchId').value=''
   }
 
   const searchHandler = (e) => {

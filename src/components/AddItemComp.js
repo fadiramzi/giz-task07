@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Button from './Button'
 import Input from './Input'
 
-const AddItemComp = ({onAdd}) => {
+const AddItemComp = ({onAdd, onComplete}) => {
 
     const [productName, setProductName] = useState()
     const [productPrice, setProductPrice] = useState()
@@ -29,7 +29,7 @@ const AddItemComp = ({onAdd}) => {
         setProductPrice('')
         setProductDiscription('')
         setProductImg(null)
-
+        onComplete()
     }
     return (
 
@@ -62,6 +62,7 @@ const AddItemComp = ({onAdd}) => {
             <Input type='file' 
             inputName='Product image: ' 
             styles='addItemInput'
+            label='Product Image: ' 
             onChange={(e) => setProductImg(URL.createObjectURL(e.target.files[0]))} />
 
             <Button name='Add New' styles='btnAdd' type='submit' />

@@ -12,7 +12,8 @@ const Input = (props) => {
                  placeholder={props.disc}
                  className={props.styles}
                  onChange={props.onChange}
-                 value={props.text} />
+                 value={props.text}
+                 id={props.id} />
         </div>
     )
 }
