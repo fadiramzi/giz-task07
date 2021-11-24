@@ -7,7 +7,6 @@ import Content from './components/Content';
 function App() {
   const [products] = useState(Content)
   const [itemFound,setItemFound] = useState(products)
-  const [itemFound1,setItemFound1] = useState([])
   
   // useEffect(() => {
   //   effect
@@ -27,12 +26,12 @@ function App() {
   }
 
   const searchHandler = (e) => {
-    setItemFound1(itemFound)
+    setItemFound(products)
     console.log(products)
-    setItemFound1(itemFound.filter((item) => {
+     let filteredProduct= itemFound.filter((item) => {
          return  item.productName.toLowerCase().includes(e.target.value.toLowerCase())
-       }))
-       setItemFound(itemFound1)
+       })
+       setItemFound(filteredProduct)
   }
 
   return (
