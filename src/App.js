@@ -1,26 +1,30 @@
 import Header from './components/Header';
 import './components/styles.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Products from './components/Products';
 import Content from './components/Content';
 
 function App() {
-  const [products] = useState(Content)
+  const [products,setProducts] = useState(Content)
   const [itemFound,setItemFound] = useState(products)
 
+  useEffect(() => {
+    setItemFound(products)
+
+  },[products])
+
     const deleteProduct = (id) => {
-      setItemFound(itemFound.filter((product) => product.id !== id ))
+      setProducts(products.filter((product) => product.id !== id ))
     }
     
     const addProduct = (product) => {
       const id = Math.floor(Math.random()*10000)+1
       const newProduct = {id, ...product}
-      setItemFound([...itemFound,newProduct])
+      setProducts([...products,newProduct])
   }
 
   const searchHandler = (e) => {
-    setItemFound(products)
-     let filteredProduct= itemFound.filter((item) => {
+     let filteredProduct= products.filter((item) => {
          return  item.productName.toLowerCase().includes(e.target.value.toLowerCase())
        })
        setItemFound(filteredProduct)
