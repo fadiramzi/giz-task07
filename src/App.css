@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body{
+    font-family: Arial;
+}
+:root{
+    --mainColor:#096063;
+    --secondaryColor:#fff;
+    --placeholderColor:#777;
+    --backgroundColor:#eee ;
+    --spanColor:#707070;
+    --bouttonColor:#161616;
+    
+
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+/*---form-div-----*/
+.form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+input{
+  border: 2px solid rgb(202 198 198);
+  border-radius: 4px;
+  height: 40px;
+}
+.form .search-input{
+  width: 215px;
+  
+ 
+}
+
+.form .search-input::placeholder{
+    padding: 5px ;
+    color:var(--placeholderColor);
+}
+.form form{
+  display: flex;
+}
+.form form input{
+  width: 180px;
+
+  margin-right: 20px;
+}
+.form form input::placeholder{
+  text-align: center;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid var(--mainColor);
+  text-indent: 10px;
+}
+
+.form form button{
+  width: 180px;
+  height: 40px;
+  border: none;
+  color: var(--secondaryColor);
+  background-color:var(--mainColor);
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/*---flex div-----*/
+.flex{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/*---card div-----*/
+.card{
+  width: 250px;
+  background-color: #fdfdfd;
+  height: 300px;
+  border-radius: 5px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 0px 5px 1px #a4a3a359;
+
+}
+.card:hover{
+  transform: translateY(-5px);
+  transition: all 0.5s ease-in-out;
+}
+
+
+ 
+
+.card span {
+  align-self: self-start;
+  padding-left: 10px;
+  font-size: 15px;
+  color:var(--spanColor);
+  
+}
+.card img{align-self: center;}
+.card .text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  
+}
+.card .text p{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card button{
+  padding: 16px;
+  background-color: #096063;
+  color: var(--secondaryColor);
+  border: none;
+  width: 96%;
+  align-self: center;
+  border-radius: 5px 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 375px) {
+  .form {flex-direction: column; align-items: center;}
+  .form .search-input {width: 180px;margin-left: -20px;}
+  .form form {flex-direction: column;margin: 5px;}
+  .form form input {margin-bottom: 5px;}
+  .flex {justify-content: center;}
+}
