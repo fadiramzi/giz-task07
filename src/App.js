@@ -14,21 +14,21 @@ function App() {
     },
     {
       type: 'Sneakers',
-      name: 'Air Max 95 U',
+      name: 'Knee high boots',
       price: '99',
       image:
         'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
     },
     {
       type: 'Sneakers',
-      name: 'Air Max 95 U',
+      name: 'boots',
       price: '99',
       image:
         'https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80',
     },
     {
       type: 'Sneakers',
-      name: 'Air Max 95 U',
+      name: 'Wellington boots',
       price: '99',
       image:
         'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80',
@@ -42,7 +42,7 @@ function App() {
     },
     {
       type: 'Sneakers',
-      name: 'Air Max 95 U',
+      name: 'Flip Flop',
       price: '99',
       image:
         'https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80',
@@ -85,16 +85,30 @@ function App() {
   ];
 
   const [products, setProducts] = useState(initialProducts);
+  const [searchValue, setSearchValue] = useState('h');
 
   const addProductHandler = (productData) => {
     setProducts([...products, productData]);
   };
 
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const filteredProducts = products.filter((product) => {
+    console.log(product.name.toLowerCase());
+    console.log(searchValue.toLowerCase());
+    return (
+      product.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+      setSearchValue === ''
+    );
+  });
+
   return (
     <div className="App">
       <div className="header">
         <div>
-          <Search />
+          <Search searchValue={searchValue} handleSearch={handleSearch} />
         </div>
         <div>
           <AddProduct addProductHandler={addProductHandler} />
@@ -102,7 +116,7 @@ function App() {
       </div>
 
       <div>
-        <ProductList products={products} />
+        <ProductList products={filteredProducts} />
       </div>
     </div>
   );
