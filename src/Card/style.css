@@ -1,0 +1,50 @@
+body{
+    background: radial-gradient(#e5e5e5 , #fff ,#e5e5e5 );
+}
+
+.card{
+    width: 20% !important;
+}
+.card:hover{
+    box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253)!important;
+}
+
+.card-body{
+    padding: 3rem 0 !important;
+}
+.card-text{
+    font-size: 0.9rem;
+    /* padding: 0.4rem 1.9rem; */
+}
+.col-md-4{
+    width: 13rem !important;
+}
+.container-fluid .row{
+    padding-top: 3rem;
+    position: relative;
+}
+.form{
+  width: 70%;
+  
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+.form>form{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-end;
+   
+}
+.form>form>div{
+    width: 100%;
+}
+
+.form-group>label{
+    width: 100%;
+    text-align: left;
+}
+.btnSubmit{
+    height: 68%;
+}
