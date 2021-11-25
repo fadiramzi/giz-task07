@@ -49,7 +49,8 @@ class Products extends React.Component{
             price:this.state.pPrice
         })
             this.setState({
-                products:currProducts
+                products:currProducts,
+                filteredProduct:currProducts
             })
 
     }
@@ -70,7 +71,8 @@ class Products extends React.Component{
         })
         this.setState({
             searchQ:newValue,
-            filteredProduct:filtered
+            filteredProduct:filtered,
+       
         })
     }
     render()
@@ -87,7 +89,7 @@ class Products extends React.Component{
 
     </div>
     <div style={{display:'flex',flexWrap:'wrap',margin:'10px' ,padding:'20px',justifyContent:'space-between',width:"1200px",height:'1200px',margin:'10px',marginLeft:'100px'}} >
-     {  this.state.products.map((product) =>(
+     {  this.state.filteredProduct.map((product) =>(
       <Card product={product}></Card>
      ))
 }
