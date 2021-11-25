@@ -1,0 +1,154 @@
+/*-----------------Product Cart styling ----------------*/
+.cartWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 14%;
+    margin: 1%;
+    text-align: left;
+    background-color: white;
+    border: 0.3px rgb(204, 204, 204) solid;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 5px 0px rgb(177, 177, 177);
+    cursor: pointer;
+    position: relative;
+}
+
+.img {
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.category {
+    color: rgb(117, 117, 117);
+    font-size: small;
+    padding: 2% 5%;
+}
+
+.nameAndPrice {
+    display: flex;
+    padding: 0 5% 8% 5%;
+    font-size: large;
+    font-weight: 600;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.addToCart {
+    background-color: black;
+    padding: 2%;
+    bottom: 0;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+width: 100%;
+
+}
+/*-----------------Products Page styling ----------------*/
+.wrapper{
+    background-color: rgb(255, 246, 235);
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: end;
+    padding: 4% 3% 0 3%;
+}
+
+.searchIn{
+    height: 50px;
+    width: 20%;
+    padding: 1%;
+    position: absolute;
+    left: 3%;
+    font-size: medium;
+
+}
+
+.productListt {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+     padding: 2%;
+}
+
+.addBtn , .nameIn, .priceIn{
+    margin-left:2% ;
+    width: 14%;
+    padding: 1%;
+    font-size: medium;
+}
+.nameIn,.priceIn {
+    color: darkgreen;
+}
+.nameIn:focus,.priceIn:focus,.searchIn:focus ,.addBtn:hover {
+     outline: none;
+     border: 2px darkgreen solid;
+     box-shadow: 0 0px 5px 0px rgb(177, 177, 177);
+
+    }
+.addBtn{
+    background-color: darkgreen;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0px 5px 0px rgb(177, 177, 177);
+}
+
+ @media only screen and ((max-width: 510px) and (min-width: 1px)) {
+ 
+    .cartWrapper {
+        width: 47%;
+    }
+    .header {
+        flex-direction: column;
+        height: 150px;
+       padding: 0;
+    }
+    .searchIn{
+        width: 100%;
+         
+        position: inherit;
+        font-size: medium;
+        
+    }
+    .addBtn, .nameIn, .priceIn {
+      margin: 0%;
+       padding: 1%;
+        width: 100%;
+        
+    }
+}
+
+ @media only screen and ((max-width: 750px) and (min-width: 510px)) {
+ 
+    .cartWrapper {
+        width: 31%;
+    }
+    .addBtn, .nameIn, .priceIn {
+      
+        width: 17%;
+        
+    }
+    .searchIn {
+        
+        width: 32%;
+         
+    }
+}
+
+ @media only screen and ((max-width: 1000px) and (min-width: 750px)) {
+ 
+    .cartWrapper {
+        width: 22.5%;
+    }
+
+}
+
+  
