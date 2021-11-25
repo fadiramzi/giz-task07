@@ -1,17 +1,20 @@
 import { useState } from 'react';
 
 const AddProduct = ({ addProductHandler }) => {
-  const [productData, setProductData] = useState({
+  const initialState = {
     brand: 'new brand',
     name: '',
     price: '',
     image:
       'https://images.unsplash.com/photo-1581619883162-4a1aa0a6a0c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-  });
+  };
+
+  const [productData, setProductData] = useState(initialState);
 
   const submitHandler = (e) => {
     e.preventDefault();
     addProductHandler(productData);
+    setProductData(initialState);
   };
 
   const onChangeHandler = (e) => {

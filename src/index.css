@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 body {
+  font-family: 'Roboto', sans-serif;
   background-color: #fffae2;
 }
 
@@ -78,6 +81,11 @@ img {
   padding: 0 16px;
 }
 
+.name_price {
+  display: flex;
+  justify-content: space-between;
+}
+
 .name {
   font-weight: bold;
 }
@@ -85,6 +93,7 @@ img {
 .brand,
 .price {
   color: #868585;
+  font-size: 14px;
 }
 
 .cart_button {
