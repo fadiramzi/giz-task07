@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fffae2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  padding: 0 80px;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.input {
+  text-align: center;
+  width: 180px;
+  height: 35px;
+  border: 1p solid #e6e3e3ea;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: #c9c7c7;
+}
+
+.price_input {
+  margin: 0 20px;
+}
+
+.add_button {
+  background-color: #096063;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  width: 180px;
+  height: 35px;
+  border: 1p solid #e6e3e3ea;
+  font-size: 14px;
+}
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin-bottom: 40px;
+  width: 250px;
+  height: 300px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-right: 30px;
+  margin-bottom: 40px;
+}
+
+img {
+  width: 100%;
+  height: 45%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.details {
+  padding: 0 16px;
+}
+
+.name_price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.brand,
+.price {
+  color: #868585;
+  font-size: 14px;
+}
+
+.cart_button {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0 0 10px 10px;
+  border: none;
+}
