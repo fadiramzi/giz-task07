@@ -1,11 +1,11 @@
 const Product = ({ product }) => {
-  const { image, type, name, price } = product;
+  const { image, brand, name, price } = product;
 
   return (
     <div className="card">
       <img src={image} alt={name} />
       <div className="details">
-        <p>{type}</p>
+        <p className="brand">{brand}</p>
         <div className="name_price">
           <p className="name">{name}</p>
           <p className="price">$ {price}</p>

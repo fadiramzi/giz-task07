@@ -77,6 +77,15 @@ img {
   padding: 0 16px;
 }
 
+.name {
+  font-weight: bold;
+}
+
+.brand,
+.price {
+  color: #868585;
+}
+
 .cart_button {
   background-color: black;
   color: white;

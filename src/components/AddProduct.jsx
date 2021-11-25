@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const AddProduct = ({ addProductHandler }) => {
   const [productData, setProductData] = useState({
+    brand: 'new brand',
     name: '',
     price: '',
     image:
