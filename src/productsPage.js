@@ -37,7 +37,7 @@ class Products extends React.Component{
     this.setState({pName:e.target.value})
       }
     handlePrice (e)  {
-    this.setState({pProce:e.target.value})
+    this.setState({pPrice:e.target.value})
 
 
      }
