@@ -51,7 +51,6 @@ body {
 .flex_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .card {
@@ -64,6 +63,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-right: 30px;
+  margin-bottom: 40px;
 }
 
 img {
