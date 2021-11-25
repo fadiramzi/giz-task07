@@ -5,15 +5,18 @@ class Button extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products:props.products
+            products:props.products,
         }
         this.addProduct = this.addProduct.bind(this)
     }
+
     addProduct() {
         let tempProducts = this.props.products
+        let nameValue = this.props.productNameInput
+        let priceValue = this.props.productPriceInput
         tempProducts.push({
-            name:"Eye Liner",
-            price:"$99",
+            name: nameValue,
+            price: '$'+ priceValue,
             description:"MakeUp"
         })
         this.setState({

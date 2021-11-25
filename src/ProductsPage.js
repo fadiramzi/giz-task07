@@ -1,20 +1,33 @@
 import React, {Component} from 'react';
-import Input from "./Input";
 import Product from "./Product";
 import {products} from "./componentsData";
 import SearchInput from "./SearchInput";
 import Button from "./Button";
+import InputName from "./InputName";
+import InputPrice from "./InputPrice";
 
 class ProductsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            productsArr: products
+            productsArr: products,
+            name: '',
+            price: ''
         }}
-    setStateOfParent = (updatedProducts) => {
+    setStateOfParent = (updatedState) => {
         this.setState({
-            productsArr: updatedProducts
+            productsArr: updatedState
         });
+    }
+    setStateOfNameInput = (updatedState) => {
+    this.setState({
+        name: updatedState
+    });
+    }
+    setStateOfPriceInput = (updatedState) => {
+    this.setState({
+        price: updatedState
+    });
     }
         render() {
         return (
@@ -22,9 +35,9 @@ class ProductsPage extends Component {
                 <div className="inputs-container">
                     <SearchInput setStateOfParent = {this.setStateOfParent} productsToSearchThrough={this.state.productsArr} placeholder="Search Products"/>
                     <div className="right-container">
-                        <Input placeholder="Name"/>
-                        <Input placeholder="Price"/>
-                        <Button titleofButton="Add New" products={this.state.productsArr} setStateOfParent = {this.setStateOfParent}/>
+                        <InputName placeholder="Name" nameVal={this.state.name} setStateOfInput = {this.setStateOfNameInput}/>
+                        <InputPrice placeholder="Price" priceVal={this.state.price} setStateOfInput = {this.setStateOfPriceInput}/>
+                        <Button titleofButton="Add New" products={this.state.productsArr} productNameInput={this.state.name} productPriceInput={this.state.price} setStateOfParent = {this.setStateOfParent}/>
                     </div>
                 </div>
                 <Product productsToDisplay={this.state.productsArr} />

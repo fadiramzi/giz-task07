@@ -5,14 +5,17 @@ class Input extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data:''
+            data:'',
+            name: props.nameVal,
         }
         this.inputUpdated = this.inputUpdated.bind(this);
     }
     inputUpdated(e) {
         const { value } = e.target;
+        let lastVal = value
         this.setState({
-            data: value
+            data: value,
+            name: this.props.setStateOfInput(lastVal)
         });
     }
     render() {
