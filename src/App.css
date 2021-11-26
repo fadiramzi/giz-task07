@@ -1,0 +1,144 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fffae2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+.nav-bar {
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+.input-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 20px;
+}
+.single-input-left {
+  padding: 10px 30px;
+  font-size: 20px;
+}
+.single-input-left::placeholder {
+  color: #656565;
+  font-size: 20px;
+}
+.single-input-right {
+  padding: 10px 10px;
+  width: 230px;
+  font-size: 20px;
+}
+.single-input-right::placeholder {
+  color: #656565;
+  font-size: 20px;
+  text-align: center;
+}
+.input-left-bar {
+  width: 40%;
+}
+.input-right-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.input-right-bar-adjustment {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.add-btn {
+  padding: 10px 20px;
+  width: 230px;
+  font-size: 20px;
+  background-color: #096063;
+  color: white;
+  border-radius: 5px;
+}
+.product-parent {
+  width: 80%;
+  margin: auto;
+}
+.product-parent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  row-gap: 100px;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.single-product-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240px;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+  position: relative;
+}
+.parent-product-type {
+  width: 100%;
+  text-align: left;
+}
+.product-type {
+  font-size: 14px;
+  color: #707070;
+}
+.parent-product-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px;
+  margin: 0;
+}
+.parent-product-info > p {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.parent-product-button {
+  background-color: black;
+  width: 100%;
+  color: white;
+  position: absolute;
+  font-size: 16px;
+  bottom: -40px;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+.price {
+  font-size: 14px;
+  color: #707070;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .input-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .input-right-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
