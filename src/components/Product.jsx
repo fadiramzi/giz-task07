@@ -2,20 +2,18 @@ import React from "react";
 import image from "../img.png";
 export default function Product(props) {
   return (
-    <div>
+    <div className="single-product-parent">
       <div>
         <img src={image} alt="image" />
       </div>
-      <div>
-        <span>{props.product.type}</span>
+      <div className="parent-product-type">
+        <span className="product-type">{props.product.type}</span>
       </div>
-      <div>
+      <div className="parent-product-info">
         <p>{props.product.title}</p>
-        <p>{props.product.price}</p>
+        <p className="price">$ {props.product.price}</p>
       </div>
-      <div>
-        <button>Add to cart</button>
-      </div>
+      <button className="parent-product-button">Add to cart</button>
     </div>
   );
 }

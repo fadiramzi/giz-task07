@@ -70,26 +70,39 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div className="input-bar">
-          <div>
-            <Inputs
-              name="search"
-              ph="Search Products"
-              value={this.state.search_value}
-              onChange={this.onSearchChange}
-              ClassName="single-input"
-            />
-          </div>
-          <div className="input-right-bar">
-            <Inputs
-              name="product_title"
-              ph="product_title"
-              value={this.state.product_name}
-              onChange={this.ProductChange}
-              ClassName="single-input"
-            />
-            <Inputs name="product_price" ph="price" value={this.state.product_price} onChange={this.PriceChange} />
-            <Buttons onClick={this.AddProduct} title="Add New" ClassName="someclass" />
+        <div className="nav-bar">
+          <div className="input-bar">
+            <div className="input-left-bar">
+              <Inputs
+                name="search"
+                ph="Search Products"
+                value={this.state.search_value}
+                onChange={this.onSearchChange}
+                ClassName="single-input-left"
+              />
+            </div>
+            <div className="input-right-bar">
+              {/* <div className="input-right-bar-adjustment"> */}
+              <Inputs
+                name="product_title"
+                ph="Name"
+                value={this.state.product_name}
+                onChange={this.ProductChange}
+                ClassName="single-input-right"
+              />
+              <Inputs
+                name="product_price"
+                ph="Price"
+                value={this.state.product_price}
+                onChange={this.PriceChange}
+                ClassName="single-input-right"
+              />
+              {/* </div> */}
+              {/* </div> */}
+              <div className="position-product-parent">
+                <Buttons onClick={this.AddProduct} title="Add New" ClassName="add-btn" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="product-parent">
