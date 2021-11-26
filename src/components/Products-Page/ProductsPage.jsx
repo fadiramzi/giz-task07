@@ -45,7 +45,7 @@ class ProductsPage extends React.Component {
                 },
             ]
         }
-        this.addProduct = this.addNewProduct.bind(this)
+        this.addNewProduct = this.addNewProduct.bind(this)
         this.onChangeName = this.onChangeName.bind(this)
         this.onChangePrice = this.onChangePrice.bind(this)
         this.onSearchChange = this.onSearchChange.bind(this)
