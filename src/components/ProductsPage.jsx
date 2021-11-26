@@ -1,13 +1,15 @@
 import React from "react";
 import Input from "./Input";
-import Button from "./Button";
 import Product from "./Product";
+import Form from "./Form";
 
 export default class ProductsPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      searchValue: "",
+      filteredProducts: [],
       products: [
         {
           productName: "Air Max 95 U",
@@ -20,6 +22,8 @@ export default class ProductsPage extends React.Component {
       ],
     };
     this.addProduct = this.addProduct.bind(this);
+    this.onSearchChange = this.onSearchChange.bind(this);
+    console.log(this.state.filteredProducts);
   }
   addProduct(event) {
     // To stop default behaviour of reloading the page
@@ -39,30 +43,55 @@ export default class ProductsPage extends React.Component {
       products: productsCopy,
     });
   }
+  onSearchChange(event) {
+    let newSearchValue = event.target.value;
+    console.log(newSearchValue);
+    let productsCopy = this.state.products;
+    const newFilteredProducts = productsCopy.filter((productObj) => {
+      return productObj.productName
+        .toLowerCase()
+        .startsWith(newSearchValue.toLowerCase());
+    });
+
+    this.setState({
+      filteredProducts: newFilteredProducts,
+      searchValue: newSearchValue,
+    });
+  }
   render() {
     return (
       <div>
         {/* Upper section */}
         <div>
           {/* Search div */}
-          <Input placeholder="Search Products" />
+          <Input
+            onChangeFunction={this.onSearchChange}
+            placeholder="Search Products"
+            value={this.state.searchValue}
+          />
           {/* Add a product div */}
-          <form onSubmit={this.addProduct}>
-            <Input name="productName" placeholder="Name" />
-            <Input name="productPrice" placeholder="Price" />
-            <Button text="Add New" />
-          </form>
+          <Form onSubmitFunction={this.addProduct} />
         </div>
         <div>
           {/* Products section */}
-          {this.state.products.map((productObj) => {
-            return (
-              <Product
-                productName={productObj.productName}
-                productPrice={productObj.productPrice}
-              />
-            );
-          })}
+          {this.state.filteredProducts.length == 0 &&
+          this.state.searchValue == ""
+            ? this.state.products.map((productObj) => {
+                return (
+                  <Product
+                    productName={productObj.productName}
+                    productPrice={productObj.productPrice}
+                  />
+                );
+              })
+            : this.state.filteredProducts.map((productObj) => {
+                return (
+                  <Product
+                    productName={productObj.productName}
+                    productPrice={productObj.productPrice}
+                  />
+                );
+              })}
         </div>
       </div>
     );
