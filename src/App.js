@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Product from "./components/Product";
+import Input from "./components/Input";
+import Button from "./components/Button";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Button title="Add New"/>
+      </div>
+      <div>
+        <Input name="Search Products" placeholder="Search Products" />
+        <Input name="Name" placeholder="Name"/>
+        <Input name="Price" placeholder="Price"/>
+      </div>
+
+      <Product name="Mark" description="Air Max 95 U" prics="$ 99" />
     </div>
   );
 }
