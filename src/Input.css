@@ -1,0 +1,10 @@
+.Input {
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+}
+
+.Input::-webkit-input-placeholder { text-align: center; }
+.Input:-moz-placeholder { text-align: center; }
+.Input::-moz-placeholder { text-align: center; }
+.Input:-ms-input-placeholder { text-align: center; }
