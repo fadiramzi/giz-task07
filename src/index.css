@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFAE2;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  position: relative;
+  margin: 45px 45px 0 90px;
+  min-height: 100vh;
+}
+
+.App .search-input {
+  width: 336px;
+  padding: 10px;
+}
+
+.App .input {
+  width: 33%;
+  font-size: 24px;
+  text-align: center;
+}
+
+.App .search-input , .App .input{
+  color: #656565;
+  border: 1px #707070 solid;
+  height: 50px;
+}
+
+.App .header .btn {
+  width: 33%;
+  height: 50px;
+  background-color: #096063;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+  border: none;
+}
+
+.App .header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.App .header div {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.App .body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 60px;
+}
+
+.App .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 260px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+}
+
+.App .card img {
+  margin-bottom: 15px;
+}
+
+.App .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App .card-content .category, .App .card-content .price {
+  font-size: 14px;
+  color: #707070;
+}
+
+.App .card-content .name {
+  font-weight: bold;
+}
+
+.App .card .btn {
+  height: 40px;
+    background-color: #000;
+    color: white;
+    border: none;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    left: 0;
+    border-radius: 0 0 15px 15px
+}
+
+.App .alert {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.App .alert ul {
+  margin-top: 25px;
+  list-style-position: inside;
+}
+
+button {
+  cursor: pointer;
+}
