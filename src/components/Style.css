@@ -1,0 +1,70 @@
+.flexView{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 6px;
+}
+
+.productsCard{
+    background-color: white;
+    width: 18%;
+    padding: 15px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    
+}
+.productsCard h1 {
+    font-size: 15px;
+}
+.productsCard h4 {
+    font-size: 10px;
+    font-weight: 500;
+}
+.productsCard h2 {
+    font-size: 15px;
+    font-weight: 500;
+}
+.flexxxx{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 5px;
+}
+.Flexx {
+    margin-right: 20px;
+}
+.Header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.Header button {
+    background-color: darkcyan;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Header input {
+    border: 1px solid darkcyan;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.productBtn {
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
