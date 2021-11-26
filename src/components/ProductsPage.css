@@ -1,0 +1,10 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+.upper-bar {
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}

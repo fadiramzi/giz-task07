@@ -2,6 +2,7 @@ import React from "react";
 import Input from "./Input";
 import Product from "./Product";
 import Form from "./Form";
+import "./ProductsPage.css";
 
 export default class ProductsPage extends React.Component {
   constructor(props) {
@@ -23,7 +24,6 @@ export default class ProductsPage extends React.Component {
     };
     this.addProduct = this.addProduct.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
-    console.log(this.state.filteredProducts);
   }
   addProduct(event) {
     // To stop default behaviour of reloading the page
@@ -38,14 +38,12 @@ export default class ProductsPage extends React.Component {
     };
     // Add the item at the beginning of the array
     productsCopy.unshift(newProduct);
-    console.log(productsCopy);
     this.setState({
       products: productsCopy,
     });
   }
   onSearchChange(event) {
     let newSearchValue = event.target.value;
-    console.log(newSearchValue);
     let productsCopy = this.state.products;
     const newFilteredProducts = productsCopy.filter((productObj) => {
       return productObj.productName
@@ -62,7 +60,7 @@ export default class ProductsPage extends React.Component {
     return (
       <div>
         {/* Upper section */}
-        <div>
+        <div className="upper-bar">
           {/* Search div */}
           <Input
             onChangeFunction={this.onSearchChange}
@@ -70,12 +68,12 @@ export default class ProductsPage extends React.Component {
             value={this.state.searchValue}
           />
           {/* Add a product div */}
-          <Form onSubmitFunction={this.addProduct} />
+          <Form styles="form-style" onSubmitFunction={this.addProduct} />
         </div>
-        <div>
+        <div className="products">
           {/* Products section */}
-          {this.state.filteredProducts.length == 0 &&
-          this.state.searchValue == ""
+          {this.state.filteredProducts.length === 0 &&
+          this.state.searchValue === ""
             ? this.state.products.map((productObj) => {
                 return (
                   <Product
