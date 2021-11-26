@@ -1,0 +1,96 @@
+body{
+    background: rgb(245, 247, 222);
+}
+
+.btn{
+    padding-inline: 90px;
+    padding-block: 10px;
+    border:none;
+    border-radius:5px;
+    background: green;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+}
+
+.srch-inp{
+    padding-block:10px;
+    padding-right:60px;
+    padding-left: 15PX;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 15px;
+}
+
+
+.pr {
+    margin-top: 30px;
+    height: 260px;
+    width: 210px;    position: relative;
+    background: white;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+
+img { 
+    position:absolute;
+    left: 40px;
+    top: 20px;
+    height: 130px;
+    width: 130px;
+    background: #000;
+}
+.pro-nam{
+    position:absolute;
+    bottom: 15px;
+    left: 10px;
+
+}
+.price{
+    position:absolute;
+    bottom: 18px;
+    right: 10px;
+}
+.des{
+    position:absolute;
+    bottom: 40px;
+    left: 10px;
+
+}
+.cart-btn{
+    position:absolute;
+    bottom: -20px;
+    background: #000;
+    color: white;
+    width: inherit;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border:0;
+}
+
+.form{
+    display:flex;
+    justify-content: space-between;
+}
+
+.right-form{
+display:flex;
+}
+.right-form >div{
+    margin-inline:10px;
+
+}
