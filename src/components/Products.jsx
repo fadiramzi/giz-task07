@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Style from "./Style.css"
 import Product from "./Product"
+import NameInput from './NameInput'
+import PriceInput from './PriceInput'
 import Pro from './assets/Pro.png'
 import Button from './Button';
 export default class Products extends Component {
@@ -8,7 +10,10 @@ export default class Products extends Component {
     {
         super();
         this.state = {
+            productName:"",
+            productPrice:"",
             searchVal:"",
+            items:[],
             productsData : [
                 {
                     name:"Air Max 95 U",
@@ -38,20 +43,39 @@ export default class Products extends Component {
                 },
             ]
         }
-        this.addProduct = this.addProduct.bind(this)
         this.onSearchChange = this.onSearchChange.bind(this)
+        this.NameChange = this.NameChange.bind(this)
+        this.PriceChange=this.PriceChange.bind(this)
+        this.AddProduct=this.AddProduct.bind(this)
     }
-    addProduct(){
-        let tempProduct = this.state.filteredProducts;
-        tempProduct.push(
-            {
-                name:"Air Max 95 U",
-                type:"Sneakers",
-                price:"$ 99",
-                img: Pro
+    NameChange(e){
+        this.setState({
+            productName:e.target.value
+        });
+    }
+    PriceChange(e){
+        this.setState({
+            productPrice:e.target.value
+        });
+    }
+    AddProduct(e){
+        let nameValue = this.state.productName;
+        let priceValue = this.state.productPrice;
+        if (nameValue && priceValue){
+            if (!isNaN(priceValue)){
+                let newProduct = new Object();
+                newProduct.img = Pro;
+                newProduct.name = nameValue;
+                newProduct.price = priceValue;
+                newProduct.type = "Sneakers";
+                this.state.items.push(newProduct);
+
+                this.setState({
+                    items:this.state.items ,
+                    filteredProducts:this.state.items,
+                })
             }
-        )
-        this.setState(tempProduct)
+        }
     }
     onSearchChange(e){
         let newValue = e.target.value;
@@ -83,7 +107,9 @@ export default class Products extends Component {
                     </form>
                     {/* Add Btn */}
                     <div>
-                        <Button value="Add New" handelClick={this.addProduct} />
+                        <NameInput placeholder="Name" type="text" value={this.state.productName} onChange={this.NameChange} />
+                        <PriceInput placeholder='Price' type="text" value={this.state.productPrice} onChange={this.PriceChange} />
+                        <Button value="Add New" handelClick={this.AddProduct} />
                     </div>
                 </div>
 
