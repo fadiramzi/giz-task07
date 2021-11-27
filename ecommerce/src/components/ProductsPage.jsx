@@ -1,6 +1,8 @@
 import React from 'react';
 import Input from './Input';
 import Product from './Product';
+import Button from './Button';
+import product from '../assets/product.png';
 
 class ProductsPage extends React.Component {
   constructor(props) {
@@ -12,36 +14,141 @@ class ProductsPage extends React.Component {
         name: '',
         products: [
             {
-                name: 'Product 1',
-                price: '$100',
-                image: 'https://picsum.photos/200/200/?random'
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
             },
             {
-                name: 'Product 2',
-                price: '$200',
-                image: 'https://picsum.photos/200/200/?random'
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
             },
             {
-                name: 'Product 3',
-                price: '$300',
-                image: 'https://picsum.photos/200/200/?random'
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
             },
         ],
         tempProducts: [
             {
-                name: 'Product 1',
-                price: '$100',
-                image: 'https://picsum.photos/200/200/?random'
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
             },
             {
-                name: 'Product 2',
-                price: '$200',
-                image: 'https://picsum.photos/200/200/?random'
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
             },
             {
-                name: 'Product 3',
-                price: '$300',
-                image: 'https://picsum.photos/200/200/?random'
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
+            },
+            {
+                name: 'Air Max 96 U',
+                price: '$99',
+                image: product
             },
         ],
     }
@@ -96,7 +203,7 @@ class ProductsPage extends React.Component {
         let newProduct = {
             name: this.state.name,
             price: this.state.price,
-            image: 'https://picsum.photos/200/200/?random'
+            image: product
         };
         tempProducts.push(newProduct);
 
@@ -108,27 +215,29 @@ class ProductsPage extends React.Component {
 
   render() {
     return (
-        <div className="ProductsPage">
-            <div className="search">
-                <Input
-                    placeholder="Search"
-                    value={this.state.search}
-                    onChange={this.onSearch}
-                />
-            </div>
+        <div className="products-page">
+            <div className="header">
+                <div className="search">
+                    <Input
+                        placeholder="Search"
+                        value={this.state.search}
+                        onChange={this.onSearch}
+                    />
+                </div>
 
-            <div className="add-product">
-                <Input
-                    placeholder="Name"
-                    value={this.state.name}
-                    onChange={this.onNameChange}
-                />
-                <Input
-                    placeholder="Price"
-                    value={this.state.price}
-                    onChange={this.onPriceChange}
-                />
-                <button class="add" onClick={this.onAddProduct}>Add Product</button>
+                <div className="add-product">
+                    <Input
+                        placeholder="Name"
+                        value={this.state.name}
+                        onChange={this.onNameChange}
+                    />
+                    <Input
+                        placeholder="Price"
+                        value={this.state.price}
+                        onChange={this.onPriceChange}
+                    />
+                    <Button class="add" onClick={this.onAddProduct} text="Add Product" />
+                </div>
             </div>
             <div className="products">
                 {this.state.tempProducts.map(product => (

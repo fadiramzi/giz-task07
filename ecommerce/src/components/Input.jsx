@@ -2,7 +2,6 @@ import React from 'react';
 
 const Input = props => {
     return (
-        <div>
             <input
                 type="text"
                 className={props.class}
@@ -10,7 +9,6 @@ const Input = props => {
                 placeholder={props.placeholder}
                 value={props.value}
                 />
-        </div>
     );
 };
 
