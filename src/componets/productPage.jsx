@@ -9,29 +9,41 @@ import Product0 from "../img/Product0.png"
 class ProductMainPage extends React.Component {
     constructor(props){
         super();
-        // button
-        // inputs search
         
         // products
+        const productArr = [
+            {
+                name: "Air Max 95 U",
+                type: "Sneakers",
+                price: 99,
+                img: Product0
+            },
+            {
+                name: "Nike Blizzard",
+                type: "Sneakers",
+                price: 99,
+                img: Product0
+            },
+            {
+                name: "Nike Blizzard",
+                type: "Sneakers",
+                price: 99,
+                img: Product0
+            },
+            {
+                name: "Nike Blizzard",
+                type: "Sneakers",
+                price: 99,
+                img: Product0
+            },
+        ];
         this.state={
-            productsArray : [
-                {
-                    name: "Air Max 95 U",
-                    type: "Sneakers",
-                    price: "$ 99",
-                    img: Product0
-                },
-                {
-                    name: "Nike Blizzard",
-                    type: "Sneakers",
-                    price: "$ 99",
-                    img: Product0
-                },
-            ]
+            productsArray : productArr,
+            filteredProducts: productArr
         }
-        
         // binding
         this.addButton = this.addButton.bind(this)
+        this.searchButton = this.searchButton.bind(this)
     }
 
     addButton(e){
@@ -50,39 +62,55 @@ class ProductMainPage extends React.Component {
 
         this.setState({
             productsArray: productsArrayCopy})
-
-        console.log("I'm Worging")
         
     }
+
+    searchButton(e){
+        let searchValue = e.target.value;
+        let productsArrayCopy = this.state.productsArray;
+        // Search---------
+        if(!searchValue){
+            this.setState({
+                searchVal:e.target.value,
+                filteredProducts:this.state.productsArray,
+            })
+            return;
+        }
+            let filtered = productsArrayCopy.filter((item) => {
+                return item.name.includes(searchValue);
+              });
+            this.setState({
+                searchVal:e.target.value,
+                filteredProducts:filtered,
+            })
+    }
+
     render() {
         return (
             <div className="main-continer">
                 <div className="menu-bar">
                     <div className="search-div">
-                        <InputSearch content="Search Products" inputId="searchProduct" />
+                        <InputSearch content="Search Products" inputId="searchProduct" functionalty={this.searchButton} />
                     </div>
                     <div className="add-product">
-                        <InputSearch content="Pricce" inputId="priceProduct" />
-                        <InputSearch content="Name" inputId="nameProduct" />
-                        <InputSearch content="Type" inputId="typeProduct" />
+                        <InputSearch content="Pricce" inputId="priceProduct" typeOf="number" minNumber={0} />
+                        <InputSearch content="Name" inputId="nameProduct" typeOf="text" />
+                        <InputSearch content="Type" inputId="typeProduct" typeOf="text" />
                         <Button_add content="Add New" onClickFunction={this.addButton} />
                     </div>
                 </div>
                 <div className='flex-products'>
                     {
-                        this.state.productsArray.map((item)=>{
-                            // console.log(item.img)
+                        this.state.filteredProducts.map((item)=>{
                             return <Product item={item} />
                         })
                     }
                 </div>
             </div>
     )}
+    componentDidMount(){
+        console.log("Done")
+    }
 }
-
-// {/* <h1>Hello World</h1> */}
-
-// const styles = StyleSheet.create({
-// })
 
 export default ProductMainPage;
