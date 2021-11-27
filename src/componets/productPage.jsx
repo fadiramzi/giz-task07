@@ -5,7 +5,6 @@ import '../mainStyle.css'
 import Product from './product';
 import Product0 from "../img/Product0.png"
 
-
 class ProductMainPage extends React.Component {
     constructor(props){
         super();
@@ -37,15 +36,18 @@ class ProductMainPage extends React.Component {
                 img: Product0
             },
         ];
+        // State
         this.state={
             productsArray : productArr,
             filteredProducts: productArr
         }
+
         // binding
         this.addButton = this.addButton.bind(this)
         this.searchButton = this.searchButton.bind(this)
     }
 
+    // Functions
     addButton(e){
         let nameProduct = document.getElementById("nameProduct").value;
         let priceProduct = document.getElementById("priceProduct").value;
@@ -61,14 +63,13 @@ class ProductMainPage extends React.Component {
             });
 
         this.setState({
-            productsArray: productsArrayCopy})
-        
+            productsArray: productsArrayCopy})        
     }
 
     searchButton(e){
         let searchValue = e.target.value;
         let productsArrayCopy = this.state.productsArray;
-        // Search---------
+        // Search
         if(!searchValue){
             this.setState({
                 searchVal:e.target.value,
@@ -76,15 +77,17 @@ class ProductMainPage extends React.Component {
             })
             return;
         }
-            let filtered = productsArrayCopy.filter((item) => {
-                return item.name.includes(searchValue);
-              });
-            this.setState({
-                searchVal:e.target.value,
-                filteredProducts:filtered,
-            })
+
+        let filtered = productsArrayCopy.filter((item) => {
+            return item.name.includes(searchValue);
+            });
+        this.setState({
+            searchVal:e.target.value,
+            filteredProducts:filtered,
+        })
     }
 
+    // Render
     render() {
         return (
             <div className="main-continer">
@@ -92,25 +95,22 @@ class ProductMainPage extends React.Component {
                     <div className="search-div">
                         <InputSearch content="Search Products" inputId="searchProduct" functionalty={this.searchButton} />
                     </div>
-                    <div className="add-product">
+                <div className="add-product">
                         <InputSearch content="Pricce" inputId="priceProduct" typeOf="number" minNumber={0} />
                         <InputSearch content="Name" inputId="nameProduct" typeOf="text" />
                         <InputSearch content="Type" inputId="typeProduct" typeOf="text" />
                         <Button_add content="Add New" onClickFunction={this.addButton} />
-                    </div>
                 </div>
+            </div>
                 <div className='flex-products'>
                     {
-                        this.state.filteredProducts.map((item)=>{
-                            return <Product item={item} />
+                        this.state.filteredProducts.map((item, index)=>{
+                            return <Product key={index} item={item} />
                         })
                     }
                 </div>
             </div>
     )}
-    componentDidMount(){
-        console.log("Done")
-    }
 }
 
 export default ProductMainPage;
