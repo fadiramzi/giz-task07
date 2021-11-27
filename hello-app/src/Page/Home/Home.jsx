@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../NavBar/Navbar";
 import styled from "styled-components";
 
 const  Bodw=styled.div`
@@ -173,7 +172,7 @@ class Home extends React.Component{
                 {
                     this.state.filteredPoints.map((item=>{
                         return  <Bod><Card>
-                            <img src={'assets/img.png'}/>
+                            <img src={'./assets/img.png'}/>
                             <h6>{item.category}</h6>
                             <RowText>
                                 <h6>{item.name}</h6>
