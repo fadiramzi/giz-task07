@@ -44,13 +44,22 @@
   background-color: #fff;
   width: 260px;
   height: 308px;
-  padding: 25px;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   border-radius: 0.5em;
   box-shadow: 0 5px 12px 1px #d7d7d7;
-  position: relative;;
+  position: relative;
+}
+
+.products {
+  display: grid;
+  grid-auto-columns: 2fr;
+  grid-auto-rows: 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px 0;
 }
 
 .product-button {
@@ -66,10 +75,13 @@
   height: 38px;
 }
 
-.product-image {
-  /* position: absolute;
-  top: 0px;
+.product-desc {
+  position: absolute;
+  bottom: 0px;
   left: 0px;
-  height: 60%; */
-  /* width: inherit; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
