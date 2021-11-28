@@ -86,6 +86,8 @@ class Home extends React.Component{
         super();
         this.state = {
             searchVal:"",
+            price: '',
+            name: '',
             filteredPoints:[
                 {
                     name:"Air Max 95 U",
@@ -116,6 +118,8 @@ class Home extends React.Component{
         }
         this.search_product = this.search_product.bind(this)
         this.addProduct=this.addProduct.bind(this)
+        this.onNameChange = this.onNameChange.bind(this);
+        this.onPriceChange = this.onPriceChange.bind(this);
     }
     addProduct()
     {
@@ -127,7 +131,7 @@ class Home extends React.Component{
 
         },)
         this.setState({
-            Points:tempPoints
+            filteredPoints:tempPoints
         })
 
     }
@@ -140,16 +144,27 @@ class Home extends React.Component{
             this.setState({
                 searchVal:newValue,
                 filteredPoints:this.state.Points
-            })
+            });
             return
         }
         let filtered = tempPoints.filter((item)=>{
-            return item.category == newValue
-        })
+            return item.name.toLowerCase() == newValue.toLowerCase()
+        });
         this.setState({
             searchVal:newValue,
             filteredPoints:filtered
-        })
+        });
+    }
+    onNameChange(e){
+        this.setState({
+            name: e.target.value
+        });
+    }
+
+    onPriceChange(e){
+        this.setState({
+            price: e.target.value
+        });
     }
     render() {
         return <Bodw>
@@ -157,34 +172,38 @@ class Home extends React.Component{
                 <Container>
                     <Wrapper>
                         <Left>
-                            <input  onChange={this.search_product} value={this.state.searchVal} type="text" placeholder={'Search Product'} />
+                            <input  onChange={this.search_product}
+                                    value={this.state.searchVal} type="text"
+                                    placeholder={'Search Product'} />
                         </Left>
 
                         <Right>
 
-                            <input placeholder={'Name'} />
-                            <input placeholder={'Price'} />
+                            <input    value={this.state.name}
+                                      onChange={this.onNameChange}
+                                      placeholder={'Name'} />
+                            <input  value={this.state.price}
+                                    onChange={this.onPriceChange}
+                                    placeholder={'Price'} />
                             <buttons ><button onClick={this.addProduct}>Add new</button></buttons>
                         </Right>
                     </Wrapper>
 
                 </Container>
                 {
-                    this.state.filteredPoints.map((item=>{
-                        return  <Bod><Card>
-                            <img src={'./assets/img.png'}/>
-                            <h6>{item.category}</h6>
-                            <RowText>
-                                <h6>{item.name}</h6>
-                                <Text>{item.price}</Text>
-                            </RowText>
-                            <BottonB>
-                                <Ht6>add new</Ht6>
-                            </BottonB>
+                    this.state.filteredPoints.map((item=><Bod key={item.id}><Card>
+                        <img src={'./assets/img.png'}/>
+                        <h6>{item.category}</h6>
+                        <RowText>
+                            <h6>{item.name}</h6>
+                            <Text>{item.price}</Text>
+                        </RowText>
+                        <BottonB>
+                            <Ht6>add new</Ht6>
+                        </BottonB>
 
 
-                        </Card></Bod>
-                    }))
+                    </Card></Bod>))
                 }
             </div>
         </Bodw>
