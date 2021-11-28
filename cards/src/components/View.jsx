@@ -8,9 +8,9 @@ function ViewCards(props) {
   return (
     <div class="card">
         <img src={img} alt="#" />
-        <h1>{props.name}</h1>
-        <p>{props.type}</p>
-        <p class="price">{props.price}</p>
+        <h1>{props.product.name}</h1>
+        <p>{props.product.type}</p>
+        <p class="price">{props.product.price}</p>
         <p><button>Add to Cart</button></p>
     </div>
   );

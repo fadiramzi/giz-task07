@@ -13,13 +13,14 @@ class App extends Component {
       type: "",
       price: "",
       search_value: "",
-      items: [],
-      items_filter: [],
+      products: [],
+      products_filter: [],
     };
 
 
     this.nameChange = this.nameChange.bind(this);
     this.priceChange = this.priceChange.bind(this);
+    this.typeChange = this.typeChange.bind(this);
     this.addProduct = this.addProduct.bind(this);
     this.onSearch = this.onSearch.bind(this);
   }
@@ -35,40 +36,48 @@ class App extends Component {
       price: e.target.value,
     });
   }
+
+  typeChange(e) {
+    this.setState({
+      type: e.target.value,
+    });
+  }
   addProduct(e) {
+    
     let tempName = this.state.name;
     let tempPrice = this.state.price;
-    if (tempName && tempPrice) {
-      if (!isNaN(tempPrice)) {
-        let product = new Object();
-        product.name = tempName;
-        product.price = tempPrice;
-        product.type = "Sneakers";
-        this.state.items.push(product);
-        this.setState({
-          items: this.state.items,
-          items_filter: this.state.items,
-        });
-      }
+    let tempType = this.state.type;
+    let tempProducts = tempName + tempPrice + tempType;
+    
+    if (tempProducts) {
+      let product = [];
+      product.name = tempName;
+      product.price = tempPrice;
+      product.type = tempType;
+      this.state.products.push(product);
+      this.setState({
+        product: this.state.products,
+        products_filter: this.state.products,
+      });
     }
   }
 
   onSearch(e) {
-    let newValue = e.target.value;
-    let name = this.state.items;
-    if (!newValue) {
+    let newSearch = e.target.value;
+    let name = this.state.products;
+    if (newSearch===false) {
       this.setState({
-        search_value: newValue,
-        items_filter: this.state.items,
+        search_value: newSearch,
+        products_filter: this.state.products,
       });
       return;
     }
     let filtered = name.filter((item) => {
-      return item.name.includes(newValue);
+      return item.name.includes(newSearch);
     });
     this.setState({
-      search_value: newValue,
-      items_filter: filtered,
+      search_value: newSearch,
+      products_filter: filtered,
     });
   }
   render() {
@@ -76,15 +85,13 @@ class App extends Component {
 
 
       <div>
-
-        
         <div>
-              <Inputs
-                name="search"
-                ph="Search Products"
-                value={this.state.search_value}
-                onChange={this.onSearch}
-              />
+            <Inputs
+              name="search"
+              ph="Search Products"
+              value={this.state.search_value}
+              onChange={this.onSearch}
+            />
             </div>
             <div>
               {/* <div> */}
@@ -97,8 +104,15 @@ class App extends Component {
               <Inputs
                 name="price"
                 ph="Price"
-                value={this.state.product_price}
+                value={this.state.price}
                 onChange={this.priceChange}
+              />
+
+              <Inputs
+                name="type"
+                ph="type"
+                value={this.state.type}
+                onChange={this.typeChange}
               />
               {/* </div> */}
               {/* </div> */}
@@ -109,7 +123,7 @@ class App extends Component {
 
 
         <div>
-          {this.state.items_filter.map((item) => {
+          {this.state.products_filter.map((item) => {
             return <ViewCards product={item} />;
           })}
         </div>
