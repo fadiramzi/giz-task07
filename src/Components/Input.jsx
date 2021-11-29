@@ -2,9 +2,7 @@ import React from 'react';
 
 function Input(props) {
   return (
-    <div className="input">
-      <input type='text' placeholder={props.placeholder} />
-    </div>
+    <input className="input" name={props.name} type={props.type} placeholder={props.placeholder} value={props.value} onChange={props.onChange}/>
   );
 }
 

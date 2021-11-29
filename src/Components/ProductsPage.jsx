@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import Product from './Product';
-// import Input from './Input';
+import Input from './Input';
+import Button from './Button';
 
 class ProductsPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      type: '',
+      caption: '',
+      price: '',
       queryParam: '',
       queryResult: [],
       products: [
@@ -41,19 +45,35 @@ class ProductsPage extends Component {
     // name value
 
     //binding for any function
-    // this.handleChange = this.handleChange.bind(this);
     this.search = this.search.bind(this);
+    this.addProduct = this.addProduct.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+
   }
 
+  addProduct(e) {
+    e.preventDefault();
+    const tempProducts = this.state.products;
+    console.log(tempProducts);
+    tempProducts.push({
+      type: this.state.type,
+      caption: this.state.caption,
+      price: this.state.price,
+    });
+    this.setState({
+      products: tempProducts,
+      // filteredProduct: tempProducts,
+    });
+  }
 
-
-  // handleChange(event) {
-  //   this.setState({value: event.target.value});
-  // }
-
-  // handleSubmit(event){
-  //   console.log(this.state.value);
-  // }
+  handleInput(e){
+    if (e.target.name === "type")
+      this.setState({type: e.target.value})
+    else if (e.target.name === "caption")
+      this.setState({caption: e.target.value})
+    else if (e.target.name === "price")
+      this.setState({price: e.target.value})
+  }
 
   search(e){
     var param = e.target.value;
@@ -69,7 +89,7 @@ class ProductsPage extends Component {
       });
     }
 
-    this.setState({ queryParam: param});
+    this.setState({ queryParam: param });
   }
 
   render() {
@@ -78,28 +98,23 @@ class ProductsPage extends Component {
         {/* Search */}
         {/* product input */}
         {/* products list */}
-
-        <input type="search" value={this.state.queryParam} onChange={this.search}/>
+        <form onSubmit={this.addProduct}>
+          <Input type="text" name="type" placeholder="type" onChange={this.handleInput}/>
+          <Input type="text" name="caption" placeholder="caption" onChange={this.handleInput}/>
+          <Input type="text" name="price" placeholder="price" onChange={this.handleInput}/>
+          <Button class="submit-button" type="submit" label="Add New"/>
+        </form>
+        <Input name="search" type="search" value={this.state.queryParam} placeholder="search here.." onChange={this.search}/>
         <div className="products">
-        { ((this.state.queryResult) && ((this.state.queryResult).length) > 0 ) ? ((this.state.queryResult).map((product) => (
-          <Product product={product}></Product>
+        { ((this.state.queryResult) && ((this.state.queryResult).length) > 0 ) ? ((this.state.queryResult).map((product, key) => (
+          <Product product={product} key={key}></Product>
         )))
-        : (<p>Product not found</p>)}
+        : ((this.state.products).map((product, key) => (
+          <Product product={product} key={key}></Product>
+        )))}
         </div>
       </div>
     )
   }
 }
 export default ProductsPage;
-//stateless
-// import React from 'react';
-
-// function ProductsPage(props) {
-//   return (
-//     <div>
-
-//     </div>
-//   );
-// }
-
-// export default ProductsPage;
