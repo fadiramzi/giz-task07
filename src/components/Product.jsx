@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Button from './Button'
 import shoose from '../static/images/shoose.jpg'
+import '../static/style/product.css'
 
 class Product extends Component {
   render() {
     return (
-      <div className="product">
+      <div className="product-component">
         <img src={shoose} alt="" />
         <div className="details">
           <div>

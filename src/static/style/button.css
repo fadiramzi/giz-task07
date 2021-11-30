@@ -1,0 +1,10 @@
+.btn.btn-addProduct{
+color: white;
+background-color: #096063;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+width: 170px;
+height: 30px;
+border: none;
+}

@@ -1,0 +1,12 @@
+.input-button{
+    width: 170px;
+    height: 30px;
+
+}
+.input-button.input-addProduct::placeholder{
+text-align: center;
+font-size: 15px;
+}
+.input-button.input-search{
+    width: 220px;
+}

@@ -1,5 +1,18 @@
-.product{
-    height: 308px;
-    width: 260px;
+.product-component{
+    width: 190px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px 20px 0px 20px;
+    margin: 20px;
+    border: 1px;
+}
+.details{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
