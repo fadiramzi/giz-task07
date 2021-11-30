@@ -6,18 +6,19 @@ import '../static/style/product.css'
 class Product extends Component {
   render() {
     return (
-      <div className="product-component">
+      <div className="product-component background-white">
+        
         <img src={shoose} alt="" />
         <div className="details">
-          <div>
-            <p>{this.props.product.name}</p>
+          <div className="background-white">
+            <p className="grey-text">{this.props.product.name}</p>
             <p>{this.props.product.description}</p>
           </div>
-          <div>
-            <p>{this.props.product.prics}</p>
+          <div className="background-white">
+            <p className="grey-text">{this.props.product.prics}</p>
           </div>
         </div>
-        <Button title="Add to Cart" />
+        <Button className="btn-cart" title="Add to Cart" />
       </div>
     )
   }

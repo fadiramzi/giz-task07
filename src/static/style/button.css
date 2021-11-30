@@ -8,3 +8,7 @@ width: 170px;
 height: 30px;
 border: none;
 }
+.button-component{
+    background-color: #FFFAE2;
+    border-radius: 10px;
+}
