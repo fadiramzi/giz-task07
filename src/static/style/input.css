@@ -1,0 +1,14 @@
+.input-button {
+  width: 170px;
+  height: 30px;
+  border: solid;
+  border-width: 1px;
+  border-color: #707070;
+}
+.input-button.input-addProduct::placeholder {
+  text-align: center;
+  font-size: 15px;
+}
+.input-button.input-search {
+  width: 220px;
+}
