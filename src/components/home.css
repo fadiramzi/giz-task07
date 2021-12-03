@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: rgb(238, 82, 82);
+    background-color: rgb(219, 218, 218);
   }
 
 
@@ -32,11 +32,7 @@ body {
     font-size: 15px;
     font-weight: 500;
 }
-.item{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
+
 .p {
     margin-right: 25px;
 }
