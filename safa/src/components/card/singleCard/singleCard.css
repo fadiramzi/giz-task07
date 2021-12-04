@@ -1,0 +1,58 @@
+.card{
+    margin: 40px;
+    margin-left: 55px;
+    margin-right: 55px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 250px;
+    z-index: 1;
+    border-radius: 10px;
+  
+}
+
+.pic{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+    width: 250px;
+    height: 150px;
+}
+
+.button{
+    background-color: black;
+    color: white;
+    margin: 0;
+    width: 250px;
+    height: 50px;
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+h4{
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+h5{
+    margin-bottom: 0;
+    text-align:left;
+    color: gray;
+}
+.cardInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.sneakers{
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+

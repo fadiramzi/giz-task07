@@ -1,0 +1,58 @@
+.header{ margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly
+}
+.search{
+    border: 1px solid gray;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    width: 200px;
+    height: 25px;
+}
+.search:hover{
+    border: 1px solid black;
+}
+
+
+.header-right{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between
+
+}
+.nameButton{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+
+}
+.priceButton{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+     border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+}
+.addButton{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: rgb(9, 92, 9);
+    color:white;
+}
