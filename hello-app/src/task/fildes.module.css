@@ -1,17 +1,6 @@
 .cardmap{
-    
+    margin: 2%;
     display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    align-items: stretch;
-    width: 200px;
-    padding: 10px;
-}
-.maincontenar{
-   /* display: flex;
-    align-items: center;
-    justify-content: center;*/
-    flex-grow: 1;
-    border: 3px solid rgba(0,0,0,.2);
-    margin: 10px;
+    flex-direction: row;
+    column-gap: 40%;
 }
