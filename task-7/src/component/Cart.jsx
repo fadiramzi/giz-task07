@@ -4,7 +4,7 @@ import '../style/cartstyle.css'
 
 function Cart(props) {
     return (
-        <div className='divcontiner'>
+        <div className='divcontiner center'>
             <img src={imgcart} alt="" width={200} />
             <p>Sneakers</p>
            <div className='divcontiner2'> 

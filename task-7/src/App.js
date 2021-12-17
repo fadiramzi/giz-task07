@@ -5,91 +5,139 @@ import React from 'react'
 
 
 class App extends React.Component {
-  
-  items = [
-    {
-      name : '1',
-      price:'1'
-    },
-    {
-      name : '2',
-      price:'2'
-    },
-    {
-      name : '3',
-      price:'3'
-    },
-  ]
-
- state ={
-   name : '',
-   price:''
- }
 
 
+  state = {
+    items :[
+      {
+        name: 'Air Max 95 U',
+        price: '1'
+      },
+      {
+        name: 'Air Max 95 U2',
+        price: '2'
+      },
+      {
+        name: 'Air Max 95 U3',
+        price: '3'
+      },
+      {
+        name: 'Air Max 95 U3',
+        price: '3'
+      },
+      {
+        name: 'Air Max 95 U3',
+        price: '3'
+      },
+      {
+        name: 'Air Max 95 U3',
+        price: '3'
+      },
+    ],
 
-chak =()=> {
+    serchitem:[],
+   
+    newname: '',
+    newprice: '',
+    defaultserch : true,
+  }
 
-  if(this.newname && this.newprice)
-  {
-    this.setState ( {
-      name:this.newname,
-      price:this.newprice
-    })
 
-     this.items.push(this.state)
-     
+
+  chak = (e) => {
+    
+    e.preventDefault()
+    if (this.state.newname && this.state.newprice) {
+      let item = {
+        name : this.state.newname,
+        price :this.state.newprice
+      }
+
+      let itemtemp = this.state.items
+
+      itemtemp.push(item)
+
+      this.setState({item:itemtemp})
+      
+
+    }
 
   }
-  
-}
 
 
 
-onserch = (serch)=>{
+
+  handelserch = (e) =>
+  {
+    e.preventDefault()
+    this.setState({defaultserch:false})
+
+    let text_input = e.target.value
+    let temp
+
+    if(this.state.defaultserch){  
+      this.setState({serchitem:this.state.items,defaultserch:false})
+     
+    
+    }
+   
 
 
-if(serch)
-{
-  this.tmp = this.items.name.filter(serch)
-}
+    if(text_input)
+    {
+      
+      const serchitem = this.state.items.filter(index => index.name === text_input)
+      this.setState({items:serchitem})
 
-else
-{
-  this.tmp = this.items
-}
+    }
+    else{
+   
+      this.setState({items:this.state.serchitem})
+    }
+   
+    
+  }
 
 
-}
 
+
+
+ 
 
 
   render() {
+
+     
+
+
     return (
-        <div>
-          <div>
-              <span>
-
-
-              <input placeholder='serch' onChange={e=>this.onserch(e.target.value)} />
-
-
-            </span>
-            <span>
-            <input type='text' placeholder='name' onChange={e=>this.newname = e.target.value}/>
-            <input type='text' placeholder='prise'  onChange={e=>this.newprice = e.target.value} />
-            <button onClick={this.chak}>Add new</button>
-            </span>
-            
-          
-          </div>
-
+      <div>
+        <div id='contener-serch'>
           <span>
-          {this.tmp.map(index =><Cart price_cart={index.price} name_cart={index.name} /> )}
+            <input placeholder='serch' onChange={this.handelserch} />
+          </span>
+          <span>
+            <form onSubmit={this.chak}>
+              <input type='text' placeholder='name' onChange={e => this.setState({newname :e.target.value})} />
+              <input type='text' placeholder='prise' onChange={e => this.setState({newprice :e.target.value})} />
+              <button >Add new</button>
+            </form>
           </span>
 
 
         </div>
+
+        <div id='continer-cart'>
+          {
+            this.state.items.map((index) =>{return <Cart name_cart={index.name} price_cart={index.price}/>})
+          
+           
+          
+          }
+        </div>
+
+
+      </div>
     );
   }
 }
