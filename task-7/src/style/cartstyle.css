@@ -1,0 +1,29 @@
+
+
+.divcontiner{
+    width: 200px;
+    background-color: aliceblue;
+    border-radius: 17px;
+    padding-bottom: 0 !important;
+}
+p{
+    text-align: left;
+    padding-left: 5px;
+    font-weight: 100;
+}
+
+.divcontiner2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6px 8px 6px;
+    font-size: large;
+}
+.divcontiner button{
+    background-color: black;
+    color: aliceblue;
+    width: 100%;
+    border: none;
+    height: 30px;
+    border-radius:0 0 10px 10px;
+
+}
