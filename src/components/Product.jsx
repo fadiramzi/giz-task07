@@ -11,8 +11,8 @@ function Product(props) {
         <div className="my-product">
             <img src={props.item.img} alt={props.item.name}/>
             <h3>{props.item.name}</h3>
-            <button>Add to Cart</button>
             <p className="price">${props.item.price}</p>
+            <button>Add to Cart</button>
         </div>
     );
 }

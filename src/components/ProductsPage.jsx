@@ -3,8 +3,9 @@ import MyButton from './MyButton'
 import MyInput from './MyInput';
 import Product from './Product';
 import './css/productsPage.css';
-import shoesimg from './css/shoes.png';
-// import img4 from './css/Image4.png';
+import iphone from './css/iphone.jpg';
+import iphone3g from './css/iphone3g.jpg';
+import iphone4 from './css/iphone4.jpg';
 
 class ProductsPage extends React.Component{
     constructor()
@@ -21,14 +22,14 @@ class ProductsPage extends React.Component{
             price: '',
             // filteredProducts:[],
             products:[
-                { name: "shoes", price: 99, img: shoesimg, },
-                { name: "shoe", price: 9, img: shoesimg, },
-                { name: "iphone", price: 20, img: shoesimg,},
+                { name: "iPhone", price: 99, img: iphone, },
+                { name: "iPhone 3G", price: 9, img: iphone3g, },
+                { name: "iPhone 4", price: 20, img: iphone4,},
             ],
-            filteredProducts: [
-                { name: "shoes", price: 99, img: shoesimg, },
-                { name: "shoe", price: 9, img: shoesimg, },
-                { name: "iphone", price: 20, img: shoesimg,},
+            filteredProducts:[
+                { name: "iPhone", price: 99, img: iphone, },
+                { name: "iPhone 3G", price: 9, img: iphone3g, },
+                { name: "iPhone 4", price: 20, img: iphone4,},
             ],
         }
         this.onSearchChange= this.onSearchChange.bind(this)
@@ -39,7 +40,7 @@ class ProductsPage extends React.Component{
     }
     onSearchChange(e)
     {
-        let newName = e.target.name;
+        let newName = e.target.value;
         let tempProducts = this.state.products;
         // search
         if (!newName){
@@ -58,11 +59,13 @@ class ProductsPage extends React.Component{
             filteredProducts:filtered,
         })
     }
+
     inputName(e)
     {
         this.state.name = e.target.value
         console.log(this.state.name)
     }
+
     inputPrice(e)
     {
         this.state.price = e.target.value
@@ -74,12 +77,13 @@ class ProductsPage extends React.Component{
         tempProducts.push({
             name: this.state.name,
             price: this.state.price,
-            img: shoesimg,
+            img: iphone,
         })
         this.setState({
             filteredProducts: tempProducts,
         })
     }
+
     render()
     {
         return <div>
