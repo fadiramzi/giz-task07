@@ -1,0 +1,33 @@
+*{
+    font-size: 16px;
+}
+
+body{
+    margin: 0;
+    padding: 90px 70px;
+    background-color: #FFFAE2;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    float:right;
+    gap: 30px;
+}
+
+.header{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+#search{
+    margin-right: 100px;
+}
+
+.products-container{
+    margin:50px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
