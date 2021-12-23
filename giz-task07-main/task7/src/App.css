@@ -1,0 +1,122 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+body{
+  background-color: #FFFAE2;
+}
+
+.container{
+  padding: 30px;
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.search {
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+
+.search-inp{
+  height: 30px;
+  width: 300px;
+  border: 1px solid;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+.Pname, .Pprice{
+  height: 30px;
+  width: 200px;
+  border: 1px solid;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.add-btn{
+  height: 30px;
+  width: 180px;
+  background-color: #096063;
+  border: none;
+  color: #FFFFFF;
+}
+
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+}
+
+
+.item{
+  background-color: #FFFFFF;
+  height: 308px;
+  width: 260px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.img{
+  background-image: url(./assets/images/shoose.png);
+  height: 103px;
+  width: 183px;
+  margin-left: 38.5px;
+  margin-right: 38.5px;
+  margin-top: 39px;
+  margin-bottom: 58px;
+
+}
+
+.dis-name{
+  margin-top: -10px;
+}
+
+.disc{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+
+.price{
+  margin-top: 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
