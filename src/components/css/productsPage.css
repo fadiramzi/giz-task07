@@ -31,3 +31,8 @@ form{
     flex-wrap: wrap;
     /* justify-content: space-between; */
 }
+
+.inputs-container{
+    display: flex;
+    gap: 2em;
+}

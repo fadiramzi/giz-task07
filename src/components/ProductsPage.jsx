@@ -40,30 +40,43 @@ class ProductsPage extends React.Component{
     }
     onSearchChange(e)
     {
+        // let filtered =[];
         let newName = e.target.value;
         let tempProducts = this.state.products;
-        // search
-        if (!newName){
+        // if (!newName){
+        //     this.setState({
+        //         searchVal: newName,
+        //         filteredProducts:this.state.products
+        //     })
+        // }
+        // else{
+        //     let filtered = tempProducts.filter((item)=>{
+        //         let searchName = (item.name === newName)
+        //         return searchName 
+        //     })
+        // }
+        // this.setState({
+        //     searchVal: newName,
+        //     filteredProducts:filtered,
+        // })
+        let filtered = tempProducts.filter((item)=>{
+            if (!newName){
+                return tempProducts;
+            }
+            else if (item.name.toLowerCase().includes(newName.toLowerCase())){
+                return item;
+            }
+        });
             this.setState({
                 searchVal: newName,
-                filteredProducts:this.state.products
+                filteredProducts:filtered,
             })
         }
-        let filtered = tempProducts.filter((item)=>{
-            let searchName = (item.name === newName)
-            return searchName 
-        })
-
-        this.setState({
-            searchVal: newName,
-            filteredProducts:filtered,
-        })
-    }
 
     inputName(e)
     {
         this.state.name = e.target.value
-        console.log(this.state.name)
+        // console.log(this.state.name)
     }
 
     inputPrice(e)
@@ -92,13 +105,13 @@ class ProductsPage extends React.Component{
             {/* list of products */}
             <div className='header'>
                 <MyInput onChangeFun={this.onSearchChange} value={this.state.searchVal} ph="Search Products" id="search"/>
-                <form>
+                <div class="inputs-container">
                     {/* <MyInput onChangeFun={this.inputName} value={this.state.name} ph="Name"/>
                     <MyInput onChangeFun={this.inputPrice} value={this.state.price} ph="Price"/> */}
                     <MyInput onChangeFun={this.inputName} ph="Name"/>
                     <MyInput onChangeFun={this.inputPrice} ph="Price"/>
                     <MyButton onClickFun={this.addProduct} caption="Add Product"/>
-                </form>
+                </div>
             </div>
             <div className="products-container">
                 {

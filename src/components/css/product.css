@@ -6,14 +6,6 @@
     margin: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     position:relative;
-    /* display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 5fr 1fr 1fr;
-    grid-template-areas:
-    "header header"
-    "sidebar aside"
-    "footer footer"; */
 }
 button{
     width: 250px;
@@ -27,5 +19,4 @@ button{
 }
 img{
     height: 150px;
-
 }
