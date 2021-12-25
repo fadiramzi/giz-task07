@@ -1,0 +1,22 @@
+.my-product{
+    background-color: white;
+    width: 250px;
+    height: 300px;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position:relative;
+}
+button{
+    width: 250px;
+    position:absolute;
+    bottom:0;
+    background-color: black;
+    color: white;
+    border: none;
+    height: 40px;
+    border-radius: 0 0 12px 12px;
+}
+img{
+    height: 150px;
+}
