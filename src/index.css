@@ -6,11 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 .main{
   padding: 36px;
   display: flex;
@@ -18,4 +13,54 @@ code {
   flex-wrap: wrap;
   display: inline-block;
 }
+.App {
+  padding: 4rem;
+}
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box {
+  display: inline-block;
+  outline: none;
+  width: 40%;
+  border: 1px solid grey;
+  font-size: 1rem;
+  padding: .7rem;
+  border-radius: .5rem;
+  margin-bottom: .4rem;
+  margin-right: .4rem;
+
+}
+img{
+  width: fit-content;
+  width: 80%;
+}
+.card {
+  margin: 2rem 2rem 2rem 0;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 0 28px 4px rgba(0,0,0,0.1);
+  transition: transform .3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+.add_button{
+  color:rgb(255, 252, 247);
+  outline: none;
+  width: 30%;
+  border: 1px solid grey;
+  font-size: 1rem;
+  padding: .7rem;
+  border-radius: .5rem;
+  background-color: #333;
+  display: inline-block;
+}
+form{
+  display: flex;
+  
+}
